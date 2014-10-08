@@ -1,0 +1,12 @@
+<% if is_admin? %>
+<div class="col-md-3 offset-1">
+<h1>Editing yearly_info</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @yearly_info, class: "btn btn-xs btn-info active" %> |
+<%= link_to 'Back', yearly_infos_path, class: "btn btn-xs btn-danger active" %>
+</div>
+<% else %>
+You don't have access to this page
+<% end %>

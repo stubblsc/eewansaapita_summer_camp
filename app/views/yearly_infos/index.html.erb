@@ -1,0 +1,52 @@
+<% if is_admin? %>
+<div class="col-md-10 offset-1">
+<h1>Listing yearly_infos</h1>
+<%= link_to 'CSV Download', yearly_infos_path(:format => :csv), :class => "btn btn-xs btn-info" %>
+<br>
+<table class="table table-striped table-condensed">
+  <%= form_tag "/yearly_infos", method: "get" do %>
+    <div class="col-md-2 offset-1"
+    <%= label_tag :year, "Year:" %>
+    <%#= text_field_tag :year, nil, :class => "form-control" %>
+    <%= select_tag :year, options_for_select((Time.zone.now.year - 100)...(Time.zone.now.year)), :class => "form-control" %>
+    <%= submit_tag "Search", :class => "btn btn-xs btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comments</th>
+      <th>Year</th>
+      <th>Role</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @yearly_infos %>
+    <% @yearly_infos.each do |yearly_info| %>
+      <tr>
+        <% name = yearly_info.user.profile.firstName + " " + yearly_info.user.profile.lastName %>
+        <td><%= link_to name, view_all_owned_yearly_infos_path(yearly_info.user_id), :class => "btn btn-xs btn-link" %></td>
+        <td><%= yearly_info.comments %></td>
+        <td><%= link_to yearly_info.year, view_by_year_yearly_infos_path(yearly_info.year), :class => "btn btn-xs btn-link" %></td>
+        <td><%= link_to yearly_info.role, view_by_role_yearly_infos_path(yearly_info.role), :class => "btn btn-xs btn-link" %></td>
+        <td><%= link_to 'Show', yearly_info, :class => "btn btn-xs btn-info" %></td>
+        <td><%= link_to 'Edit', edit_yearly_info_path(yearly_info), :class => "btn btn-xs btn-warning" %></td>
+        <td><%= link_to 'Destroy', yearly_info, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yearly info', new_yearly_info_path, :class => "btn btn-sm btn-primary" %>
+</div>
+<% else %>
+You don't have access to this page
+<% end %>

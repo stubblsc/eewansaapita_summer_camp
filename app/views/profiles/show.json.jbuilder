@@ -1,0 +1,1 @@
+json.extract! @profile, :id, :userId, :firstName, :midInitial, :lastName, :dateOfBirth, :enrollNum, :gender, :email, :streetAddr, :cityAddr, :stateAddr, :zipAddr, :guard1Name, :guard2Name, :guardEmail, :homePhone, :cellPhone, :created_at, :updated_at

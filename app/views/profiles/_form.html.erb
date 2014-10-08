@@ -1,0 +1,87 @@
+<%= form_for(@profile, :html => {:class => "form"}) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "First name:" %><br>
+    <%= f.text_field :firstName, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Middle initial:" %><br>
+    <%= f.text_field :midInitial, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Last name:" %><br>
+    <%= f.text_field :lastName, class: "form-control" %>
+  </div>
+  <% if is_admin? %>
+    <div class="form-group">
+      <%= f.label "User type:" %><br>
+      <%= f.select :userType, options_for_select(["User", "Admin"], @profile.userType), {}, {:class => 'form-control'} %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label "Date of birth:" %><br>
+    <%= f.text_field :dateOfBirth, class: "form-control", id: "datepicker" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Tribe enrollment #:" %><br>
+    <%= f.text_field :enrollNum, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Gender:" %><br>
+    <%= f.text_field :gender, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Email:" %><br>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Street address:" %><br>
+    <%= f.text_field :streetAddr, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "City:" %><br>
+    <%= f.text_field :cityAddr, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "State:" %><br>
+    <%= f.text_field :stateAddr, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Zipcode:" %><br>
+    <%= f.text_field :zipAddr, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Guardian1 name:" %><br>
+    <%= f.text_field :guard1Name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Guardian2 name:" %><br>
+    <%= f.text_field :guard2Name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Guardian email:" %><br>
+    <%= f.text_field :guardEmail, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Home phone #:" %><br>
+    <%= f.text_field :homePhone, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Cell phone:" %><br>
+    <%= f.text_field :cellPhone, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

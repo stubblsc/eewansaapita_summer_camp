@@ -1,0 +1,25 @@
+<% if is_admin? %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @yearly_info.comments %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @yearly_info.year %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @yearly_info.role %>
+</p>
+
+<%= link_to 'Edit', edit_yearly_info_path(@yearly_info), class: "btn btn-xs btn-info active" %> |
+<% if is_admin? %>
+<%= link_to 'Back', yearly_infos_path, class: "btn btn-xs btn-danger active" %>
+<% end %>
+<% else %>
+You don't have access to this page
+<% end %>

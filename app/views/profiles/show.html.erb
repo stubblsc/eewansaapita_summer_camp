@@ -1,0 +1,99 @@
+<% if is_admin? or owns_profile? %>
+<div class="col-md-3 offset-1">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.firstName %>
+</p>
+
+<p>
+  <strong>Middle initial:</strong>
+  <%= @profile.midInitial %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.lastName %>
+</p>
+
+<% if is_admin? %>
+<p>
+  <strong>User type:</strong>
+  <%= @profile.userType %>
+</p>
+<% end %>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @profile.dateOfBirth %>
+</p>
+
+<p>
+  <strong>Tribe enrollment #:</strong>
+  <%= @profile.enrollNum %>
+</p>
+
+<p>
+  <strong>Gender (M/F):</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profile.email %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @profile.streetAddr %>
+</p>
+
+<p>
+  <strong>City address:</strong>
+  <%= @profile.cityAddr %>
+</p>
+
+<p>
+  <strong>State address:</strong>
+  <%= @profile.stateAddr %>
+</p>
+
+<p>
+  <strong>Zip address:</strong>
+  <%= @profile.zipAddr %>
+</p>
+
+<p>
+  <strong>Guardian1 name:</strong>
+  <%= @profile.guard1Name %>
+</p>
+
+<p>
+  <strong>Guardian2 name:</strong>
+  <%= @profile.guard2Name %>
+</p>
+
+<p>
+  <strong>Guardian email:</strong>
+  <%= @profile.guardEmail %>
+</p>
+
+<p>
+  <strong>Home phone #:</strong>
+  <%= @profile.homePhone %>
+</p>
+
+<p>
+  <strong>Cell phone #:</strong>
+  <%= @profile.cellPhone %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-xs btn-info active" %> |
+<% if is_admin? %>
+<%= link_to 'Back', profiles_path, class: "btn btn-xs btn-danger active" %>
+<% end %>
+</div>
+<% else %>
+You are not authorized to view this page
+<% end %>

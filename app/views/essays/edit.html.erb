@@ -1,0 +1,12 @@
+<% if is_admin? or owns_essay? %>
+<div class="col-md-3 offset-1">
+<h1>Editing essay</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @essay %> |
+<%= link_to 'Back', essays_path %>
+</div>
+<% else %>
+You are not authorized to view this page
+<% end %>

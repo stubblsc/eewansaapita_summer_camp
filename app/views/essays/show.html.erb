@@ -1,0 +1,28 @@
+<% if is_admin? or owns_essay? %>
+<div class="col-md-7 offset-1">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <% name = @essay.user.profile.firstName + " " + @essay.user.profile.lastName %>
+  <%= name %>
+</p>
+
+<p>
+  <strong>Essay:</strong>
+  <%= @essay.essay %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @essay.year %>
+</p>
+
+<%= link_to 'Edit', edit_essay_path(@essay), :class => "btn btn-xs btn-info" %> |
+<% if is_admin? %>
+<%= link_to 'Back', essays_path %>
+<% end %>
+</div>
+<% else %>
+You do not have access to this page
+<% end %>
