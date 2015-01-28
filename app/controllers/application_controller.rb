@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin?
-    if (current_user.profile and current_user.profile.userType == "Admin") or current_user.id == 1
+    if (current_user.profile and current_user.profile.userType == "Admin")
       return true
     else
       return false
