@@ -4,9 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'mysql'
-gem 'mysql2'
+group :production do
+  gem 'pg', '>= 0.17.1'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
@@ -47,4 +50,9 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
 gem 'to_csv-rails'
+
+gem 'seed_dump'
+
+gem 'figaro'

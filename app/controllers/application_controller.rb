@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :current_user_profile
 
   helper_method :current_user_has_essay_for_current_year?
+  helper_method :is_admin?
 
   before_filter do
     if request.ssl? && Rails.env.production?
