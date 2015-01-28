@@ -11,7 +11,7 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-  pg_db: "da40u224l4qfrl"
-  pg_user: "cpabwcovomhdkx"
-  pg_pass: "XHQ0VjLmJCW4uKXhltoQiV2s4f"
-  pg_url: "postgres://cpabwcovomhdkx:XHQ0VjLmJCW4uKXhltoQiV2s4f@ec2-174-129-1-179.compute-1.amazonaws.com:5432/da40u224l4qfrl"
+  pg_db: "d51lr1c19ce5me"
+  pg_user: "rhdjgljzispoiy"
+  pg_pass: "zQ1Sy7SmVAGkJqvtb1hYIxd_G3"
+  pg_url: "postgres://rhdjgljzispoiy:zQ1Sy7SmVAGkJqvtb1hYIxd_G3@ec2-107-22-182-206.compute-1.amazonaws.com:5432/d51lr1c19ce5me"
