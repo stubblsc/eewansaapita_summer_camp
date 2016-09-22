@@ -1,0 +1,2 @@
+# eewansaapita_summer_camp
+Created a prototype Ruby on Rails application to allow the Miami Indian tribe to have their summer camp applicants and workers register on their website and track different attributes of those camp attendees and workers over time. I was personally responsible for the construction of the entire site, along with several meetings with the client to develop specifications and work on ideas of how the site should be developed along the way. I was personally responsible for the entirety of the application.
